@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link data-rh="true" rel="shortcut icon" href="https://binhong.me/images/profile.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=0.75">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://binhong.me/threads">
+    <meta property="og:site_name" content="WeeklyThreads by BinHong Lee">
+    <meta property="og:title" content="WeeklyThreads">
+    <meta property="og:description" content="A collection of Twitter threads of interest written by @binhonglee.">
+    <meta property="og:image" content="../images/profile.png">
+    <meta property="og:profile:first_name" content="BinHong">
+    <meta property="og:profile:last_name" content="Lee">
+    <meta property="og:username" content="binhong">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="A collection of Twitter threads of interest written by @binhonglee.">
+    <meta name="twitter:title" content="WeeklyThreads by BinHong Lee">
+    <meta name="twitter:image" content="https://binhong.me/images/profile.png">
+    <meta name="twitter:image:alt" content="Commissioned image icon of me coding with a pair of black headphones on while sitting on a pink bean bag wearing a light blue hoodie. The laptop is purple with a bunch of mostly MLH demo stickers on it.">
+    <meta name="twitter:site" content="@binhonglee">
+    <title>WeeklyThreads by BinHong Lee</title>
+    <link rel="stylesheet" href="https://binhong.me/fonts/fonts.css">
+    <link rel="stylesheet" href="./threads.css">
+    <link rel="stylesheet" href="https://binhong.me/blog/style.css">
+  </head>
+  <body>
+    <details class="dark_mode_toggle" role="button" open>
+      <summary>
+        <div class="content">
+          <div class="secondary_block">
+            <p class="name-title">Threads</p>
+          </div>
+        </div>
+      </summary>
+    </details>
+    <div class="wrapper">
+      <div class="content dropdown">
+        <button class="dropdown_toggle">+</button>
+        <div class="header_links">
+          <a class="link" href="https://binhong.me/">About</a>
+          <p>|</p>
+          <a class="link" href="https://binhong.me/blog">Blog</a>
+          <p>|</p>
+          <a class="link" href="https://binhong.me/threads">Threads</a>
+        </div>
+      </div>
+      <div class="content_body primary_block">
+        <div class="content tweet_block">
+          <div class="tweet_block">
+            <a rel="noopener" href="https://twitter.com/binhonglee/">
+              <div class="profile_picture_block">
+                <img src="https://pbs.twimg.com/profile_images/1277520708264816640/rACE3stK_200x200.jpg" />
+                @binhonglee
+              </div>
+            </a>
+            <p class="text">First of all, reported for misinformation. Alright, so this tweet bothered me enough (especially looking at other people eating this up at face value) that I guess I want to rant about it so here's a thread on why this doesn't mean anything.</p>
+            <div class="tweet">
+              <a rel="noopener" href="https://twitter.com/NehemiahKiv/">
+                <div class="profile_picture_block">
+                  <img src="https://pbs.twimg.com/profile_images/1280723238696431617/j8CestDH_200x200.jpg" />
+                  @NehemiahKiv
+                </div>
+              </a>
+              <p class="text">The bigger the product the more lines of code used?</p><br />
+            <div class="tweet_img_block">
+              <img class="tweet_img" src="https://pbs.twimg.com/media/FCS-IUjXEAEdutA.jpg" />
+            </div>
+            <br />
+            
+              <p class="date">
+                <a rel="noopener" href="https://twitter.com/NehemiahKiv/status/1451494035927994394">Read more...</a>
+              </p>
+            </div><p class="text">1. I highly doubt you can get an accurate LoC count on any of these apps considering that they are not open sourced and they evolve constantly (even on a day-to-day basis).</p><p class="text">2. Even if we assume it's accurate, what's the methodology here? Like do you count all the GCP and FB's in house infra code? Are you gonna add all of AWS count to Snap's LoC count as well since they use AWS? What about tools? Like UI for monitoring graphs or whatever?</p><p class="text">3. What about programming languages? FB wrote Hack and have it in the same repository as like everything else. (This is how the language API can evolve quickly.) Are you going to count LoC of like C++, Java, Kotlin, ObjC, Swift etc. into a lot of these apps too?</p><p class="text">4. Kinda similar to 3 but frameworks. FB has all of React as part of the code base and Twitter uses React for their web UI. Are you gonna add LoCs for React to Twitter's as well?</p><p class="text">5. How do you meaningfully separate IG / WA code count from FB? And YouTube from G? They might all live in separate repositories / folders but there's a good chance they reuse a lot of the libraries and services. Are you just going to double / triple count them?</p><p class="text">I think I wrote enough at this point. Well that's it for now. Please don't fall for these sort of clickbait images. Thanks.</p><p class="date">
+              <a rel="noopener" href="https://twitter.com/binhonglee/status/1451743920400973825">10/23/2021</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <footer class="content">
+        <div class="primary_block footer">
+          <div class="row">
+            <p>Fonts:</p>
+            <a href="https://github.com/tonsky/FiraCode/" rel="noopener" target="_blank">Fira Code</a>,
+            <a href="https://github.com/adobe-fonts/source-sans/" rel="noopener" target="_blank" class="name">Source Sans 3</a>
+          </div>
+          <div class="row">
+            <a href="https://github.com/binhonglee/threads" rel="noopener" target="_blank">Source (GitHub)</a> </p>
+          </div>
+          <div class="row">
+            <p>&copy; 2021</p>
+            <a class="name" href="https://binhong.me">BinHong Lee</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

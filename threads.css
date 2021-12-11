@@ -1,0 +1,92 @@
+:root {
+  --twitter-color: #1DA1F2;
+  --twitter-dark: #14171A;
+  --twitter-light: #FFFFFF;
+}
+
+.tweet_block {
+  font-size: 25px;
+  font-family: SourceSans3;
+
+  color: var(--twitter-dark);
+}
+
+.dark_mode_toggle[open] + div .tweet_block {
+  color: var(--twitter-light);
+}
+
+.tweet_block a {
+  word-break: break-all;
+}
+
+.dark_mode_toggle[open] + div .tweet_block a,
+.tweet_block a {
+  color: var(--twitter-color);
+}
+
+.tweet_block .unbreak {
+  word-break: unset;
+}
+
+.tweet_block .profile_picture_block {
+  height: 80px;
+  padding-bottom: 20px;
+}
+
+.tweet {
+  margin: 25px 0;
+  border: solid;
+  border-radius: 15px;
+  border-color: var(--twitter-color);
+  padding: 30px;
+
+  font-size: 25px;
+  font-family: SourceSans3;
+
+  color: var(--twitter-dark);
+  background-color: var(--twitter-light);
+}
+
+.tweet_block p,
+.tweet p {
+  display: block;
+}
+
+.dark_mode_toggle[open] + div .tweet {
+  background-color: var(--twitter-dark);
+  color: var(--twitter-light);
+}
+
+@media screen and (max-width: 370px) {
+  .tweet_block .profile_picture_block {
+    padding-bottom: 50px;
+  }
+}
+
+.tweet_block .profile_picture_block > img {
+  margin-right: 10px;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  display: inline-block;
+  border: solid;
+  border-color: var(--twitter-color);
+  border-radius: 50px;
+  vertical-align: middle;
+}
+
+.tweet .quoted_tweet {
+  border: solid;
+  border-color: var(--twitter-color);
+  border-radius: 20px;
+  padding: 20px;
+  display: block;
+}
+
+.date {
+  padding-top: 20px;
+}
+
+.text {
+  padding: 20px 0;
+}
