@@ -83,10 +83,12 @@
   display: block;
 }
 
-.date {
+.tweet_block .date,
+.tweet .tweet {
   padding-top: 20px;
 }
 
-.text {
+.tweet_block .text,
+.tweet .text {
   padding: 20px 0;
 }

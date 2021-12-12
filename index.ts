@@ -45,8 +45,8 @@ async function genProcessTweet(id: string) {
   const html = await genThreadHTML(id);
   const firstID = (await genThread(id))[0].id_str;
   tweetHTMLs = tweetHTMLs + (await genTweetHTML(firstID))
-    .replace("https://twitter.com/binhonglee/status/" + firstID, "./" + id + ".html")
-    .replace("Read more...", "Read this thread...");
+    .replace("<a rel=\"noopener noreferrer\" href=\"https://twitter.com/binhonglee/status/" + firstID, "<a href=\"./" + id + ".html")
+    .replace("Read more...</a>\n  </p>", "Read this thread...</a>\n  </p>");
   parseToTemplate(id, html);
 }
 
