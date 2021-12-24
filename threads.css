@@ -2,6 +2,7 @@
   --twitter-color: #1DA1F2;
   --twitter-dark: #14171A;
   --twitter-light: #FFFFFF;
+  --twitter-soft-dark: #15202B;
 }
 
 .tweet_block {
@@ -53,7 +54,7 @@
 }
 
 .dark_mode_toggle[open] + div .tweet {
-  background-color: var(--twitter-dark);
+  background-color: var(--twitter-soft-dark);
   color: var(--twitter-light);
 }
 
@@ -91,4 +92,8 @@
 .tweet_block .text,
 .tweet .text {
   padding: 20px 0;
+}
+
+.tweet_img {
+  max-width: 95%;
 }
