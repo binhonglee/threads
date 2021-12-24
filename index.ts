@@ -7,7 +7,7 @@ import {
   copyFileSync,
 } from "fs";
 import { join } from "path";
-import { genThreadHTML, genThread, genTweetHTML } from "twitter-threads";
+import { genThreadHTMLFromTweets, genThread, genTweetHTML } from "twitter-threads";
 
 
 const tweets = [
@@ -42,15 +42,17 @@ async function genRun() {
 }
 
 async function genProcessTweet(id: string) {
-  const html = await genThreadHTML(id);
-  const firstID = (await genThread(id))[0].id_str;
+  const thread = await genThread(id);
+  const html = await genThreadHTMLFromTweets(thread);
+  const firstID = thread[0].id_str;
+  const desc = thread[0].text.split("\n").join(" ");
   tweetHTMLs = tweetHTMLs + (await genTweetHTML(firstID))
     .replace("<a rel=\"noopener noreferrer\" href=\"https://twitter.com/binhonglee/status/" + firstID, "<a href=\"./" + id + ".html")
     .replace("Read more...</a>\n  </p>", "Read this thread...</a>\n  </p>");
-  parseToTemplate(id, html);
+  parseToTemplate(id, html, desc);
 }
 
-function parseToTemplate(id: string, html: string) {
+function parseToTemplate(id: string, html: string, description: string = "A collection of Twitter threads of interest written by @binhonglee.") {
   writeFileSync(
     join(outDir, id + ".html"),
     readFileSync("template.html")
@@ -59,5 +61,7 @@ function parseToTemplate(id: string, html: string) {
         "{{ $CONTENT }}",
         html.split("\n").join("\n          ")
       )
+      .split("{{ $DESCRIPTION }}")
+      .join(description)
     );
 }
