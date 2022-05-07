@@ -1,9 +1,12 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  run:
-    name: Run successfully
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -17,3 +20,10 @@ jobs:
       run: npm i
     - name: Build
       run: npm run esbuild
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+        publish_branch: gh-pages
