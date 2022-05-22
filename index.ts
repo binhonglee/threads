@@ -11,9 +11,8 @@ import { genThreadHTMLFromTweets, genThread, genTweetHTML } from "twitter-thread
 
 
 const tweets = [
-  "1527457305112899584",
-  "1515418065302827011", "1511249509854052358", "1504916910692966400",
-  "1507791682288295936", "1493624038333169666", "1487614039219789825",
+  "1528434798351425536", "1527457305112899584", "1515418065302827011",
+  "1504916910692966400", "1507791682288295936", "1487614039219789825",
   "1472079288694235139", "1467308938282500096", "1461617488848834563",
   "1459624305860378624", "1457409282698190851", "1451743926465884160",
   "1449855648334708742", "1444441812840505349", "1441841488464257028",
@@ -55,7 +54,7 @@ async function genProcessTweet(id: string) {
   parseToTemplate(id, html, desc);
 }
 
-function parseToTemplate(id: string, html: string, description: string = "A collection of Twitter threads of interest written by @binhonglee.") {
+function parseToTemplate(id: string, html: string, description: string = "A collection of my own Twitter threads.") {
   writeFileSync(
     join(outDir, id + ".html"),
     readFileSync("template.html")
