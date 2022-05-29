@@ -2,7 +2,7 @@ pull_request_rules:
   - name: Dependabot updates
     conditions:
       - author~=^dependabot(|-preview)\[bot\]$
-      - "status-success=run"
+      - "status-success=Run successfully"
     actions:
       merge:
         method: squash
