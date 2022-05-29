@@ -19,7 +19,11 @@ jobs:
     - name: Install
       run: npm i
     - name: Build
-      run: npm run esbuild
+      run: npm run generate
+    - name: Serve
+      run: npm run serve &
+    - name: Generate Screenshots
+      run: npm run altimeter
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3

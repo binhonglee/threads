@@ -6,9 +6,10 @@ import {
   rmSync,
   copyFileSync,
 } from "fs";
-import { join } from "path";
+import path, { join } from "path";
 import { genThreadHTMLFromTweets, genThread, genTweetHTML } from "twitter-threads";
 
+import { AltimeterConfig, AltimeterDestination } from "@globetrotte/altimeter";
 
 const tweets = [
   "1530566974744383489",
@@ -36,6 +37,7 @@ mkdirSync(outDir);
 copyFileSync(threadsCSS, join(outDir, threadsCSS));
 
 genRun();
+genConfig();
 
 async function genRun() {
   for (const id of tweets) {
@@ -66,5 +68,21 @@ function parseToTemplate(id: string, html: string, description: string = "A coll
       )
       .split("{{ $DESCRIPTION }}")
       .join(description)
+      .split("{{ $ID }}")
+      .join(id)
     );
+}
+
+async function genConfig() {
+  let config = new AltimeterConfig();
+  config.baseURL = "http://localhost:1313";
+  
+  config.destURLs = tweets.map((tweet) => {
+    return new AltimeterDestination(tweet, tweet);
+  });
+
+  config.destURLs.push(new AltimeterDestination("index", "index"));
+
+  config.dir = "dist/preview";
+  writeFileSync(path.join(__dirname, "config.json"), JSON.stringify(config, null, 2));
 }

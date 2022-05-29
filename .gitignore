@@ -1,2 +1,5 @@
 node_modules
 dist
+
+# This is a generated file
+config.json
