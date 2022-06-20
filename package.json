@@ -12,7 +12,7 @@
   "devDependencies": {
     "@globetrotte/altimeter": "^0.0.4",
     "@types/node": "^18.0.0",
-    "esbuild": "^0.14.44",
+    "esbuild": "^0.14.46",
     "twitter-threads": "^0.0.7"
   }
 }
