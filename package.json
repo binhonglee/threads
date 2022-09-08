@@ -11,7 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "@globetrotte/altimeter": "^0.0.4",
-    "@types/node": "^18.7.15",
+    "@types/node": "^18.7.16",
     "esbuild": "^0.15.7",
     "twitter-threads": "^0.0.7"
   }
